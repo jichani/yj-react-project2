@@ -1,6 +1,5 @@
 import { Button, Input, Radio, RadioGroup, Stack, Text, VStack } from "@chakra-ui/react";
 import Layout from "./Layout";
-import { useState } from "react";
 
 export default function Contact() {
   return (
