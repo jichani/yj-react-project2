@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <>
       <Layout>
-        <VStack spacing={16} w="inherit" py={"140px"} px={4} alignItems={"flex-start"}>
+        <VStack spacing={16} bg="gray.400" w="inherit" py={"140px"} px={4} alignItems={"flex-start"}>
           {/* 최신상품 컨테이너 */}
           <VStack w={"full"} alignItems={"flex-start"}>
             <Text fontWeight={600} fontSize={24}>
@@ -100,7 +100,7 @@ export default function Home() {
                         transform={"translate(-50%, -50%)"}
                         fontSize="20"
                         fontWeight={900}
-                        color={"red.600"}
+                        color={"black"}
                       >
                         {" "}
                         {item.text}

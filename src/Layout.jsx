@@ -1,5 +1,6 @@
 import { Text, Box, HStack, VStack } from "@chakra-ui/react";
-import { AiFillApple, AiFillHome, AiFillProfile, AiFillContacts, AiOutlineArrowLeft } from "react-icons/ai";
+import { AiFillHome, AiFillProfile, AiFillContacts, AiOutlineArrowLeft } from "react-icons/ai";
+import { RiKakaoTalkFill } from "react-icons/ri";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const GNB = [
@@ -24,16 +25,16 @@ export default function Layout({ children, canGoBack, title }) {
       <Box w="full" display={"flex"} justifyContent={"center"}>
         <VStack w="sm">
           {/* 헤더 */}
-          <Box display={"flex"} justifyContent={"center"} alignItems={"center"} w="inherit" h="120px" bg={"black"} position={"fixed"} top={0} zIndex={9}>
+          <Box display={"flex"} justifyContent={"center"} alignItems={"center"} w="inherit" h="120px" bg={"yellow.400"} position={"fixed"} top={0} zIndex={9}>
             {canGoBack ? (
               <>
                 <Box onClick={handleClick} position="absolute" left="20px" cursor="pointer">
-                  <AiOutlineArrowLeft color="white" size="20px" />
+                  <AiOutlineArrowLeft color="black" size="20px" />
                 </Box>
-                <Text color="white">{title}</Text>
+                <Text color="black">{title}</Text>
               </>
             ) : (
-              <AiFillApple size={32} color="gray" />
+              <RiKakaoTalkFill size={32} color="black" />
             )}
           </Box>
 
@@ -43,14 +44,14 @@ export default function Layout({ children, canGoBack, title }) {
           {/* 푸터 */}
 
           {canGoBack ? null : (
-            <Box w="inherit" h="120px" bg={"black"} position={"fixed"} bottom={0} zIndex={9}>
+            <Box w="inherit" h="120px" bg={"yellow.400"} position={"fixed"} bottom={0} zIndex={9}>
               <HStack h="inherit" justifyContent={"space-between"} alignItems={"center"}>
                 {GNB.map((item) => (
                   <Box w="full">
                     <Link to={item.href}>
                       <VStack w="full">
-                        <item.icon color={location.pathname === item.href ? "white" : "gray"} />
-                        <Text color={location.pathname === item.href ? "white" : "gray"}>{item.title}</Text>
+                        <item.icon color={location.pathname === item.href ? "white" : "black"} />
+                        <Text color={location.pathname === item.href ? "white" : "black"}>{item.title}</Text>
                       </VStack>
                     </Link>
                   </Box>
