@@ -1,5 +1,6 @@
 import { Box, Grid, GridItem, Text, VStack } from "@chakra-ui/react";
 import Layout from "./Layout";
+import { Link } from "react-router-dom";
 
 const newItem = [
   {
@@ -50,10 +51,12 @@ export default function Home() {
                   position={"relative"}
                   overflow="hidden"
                 >
-                  <Box position={"absolute"} top={0} left={0} width={"full"} height={"full"} bg={"rgba(0,0,0,0.5)"}></Box>
-                  <Text color={"white"} bottom={0} position={"absolute"} align={"center"} w={"full"} py={4} fontWeight={600}>
-                    {item.text}
-                  </Text>
+                  <Link to="/detail">
+                    <Box position={"absolute"} top={0} left={0} width={"full"} height={"full"} bg={"rgba(0,0,0,0.5)"}></Box>
+                    <Text color={"white"} bottom={0} position={"absolute"} align={"center"} w={"full"} py={4} fontWeight={600}>
+                      {item.text}
+                    </Text>
+                  </Link>
                 </GridItem>
               ))}
             </Grid>
@@ -78,30 +81,32 @@ export default function Home() {
                   backgroundPosition={"center center"}
                   position={"relative"}
                 >
-                  <Box
-                    w="full"
-                    align="center"
-                    position={"absolute"}
-                    top={0}
-                    left={0}
-                    h="full"
-                    bgGradient={"linear(to-b, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.9))"}
-                  >
-                    <Text
+                  <Link to="/detail">
+                    <Box
                       w="full"
                       align="center"
                       position={"absolute"}
-                      top={"50%"}
-                      left={"50%"}
-                      transform={"translate(-50%, -50%)"}
-                      fontSize="20"
-                      fontWeight={900}
-                      color={"red.600"}
+                      top={0}
+                      left={0}
+                      h="full"
+                      bgGradient={"linear(to-b, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.9))"}
                     >
-                      {" "}
-                      {item.text}
-                    </Text>
-                  </Box>
+                      <Text
+                        w="full"
+                        align="center"
+                        position={"absolute"}
+                        top={"50%"}
+                        left={"50%"}
+                        transform={"translate(-50%, -50%)"}
+                        fontSize="20"
+                        fontWeight={900}
+                        color={"red.600"}
+                      >
+                        {" "}
+                        {item.text}
+                      </Text>
+                    </Box>
+                  </Link>
                 </GridItem>
               ))}
             </Grid>
